@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - GEROS Media Notes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <header class="header">
+        <div class="logo-wrap">
+          <img src="LogoGR.png" alt="GEROS Media Logo" class="logo" />
+        </div>
+        <h1 class="app-title">GEROS Media Notes</h1>
+        <p class="subtitle">Your professional note-taking solution</p>
+      </header>
+    </section>
+    <div class="container">
+      <h2>Register</h2>
+      <form id="register-form">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+      <div id="register-error" class="error"></div>
+    </div>
+    <script src="register.js"></script>
+  </body>
+</html>
