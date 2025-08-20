@@ -1,0 +1,16 @@
+{
+  "name": "w7fullstacknotesapplicationusingnodeandexpress",
+  "version": "1.0.0",
+  "description": "A simple note-taking app built with Node.js, Express, HTML, CSS, and JavaScript.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
