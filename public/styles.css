@@ -1,8 +1,64 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f4f4f4 100%);
+  background: #f4f4f4;
   margin: 0;
   padding: 0;
+}
+
+.hero {
+  width: 100vw;
+  min-height: 320px;
+  background: linear-gradient(120deg, #4f8cff 0%, #a6c1ee 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(79,140,255,0.08);
+  position: relative;
+  z-index: 1;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(166,193,238,0.2) 0%, #f4f4f4 100%);
+  z-index: -1;
+}
+.header {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  background: transparent;
+  box-shadow: none;
+  border-bottom: none;
+}
+.logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(79,140,255,0.12);
+  background: #fff;
+  border: 2px solid #e0e7ff;
+}
+.app-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #222;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(79,140,255,0.08);
+}
+.subtitle {
+  color: #f4f4f4;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 .header {
   text-align: center;
