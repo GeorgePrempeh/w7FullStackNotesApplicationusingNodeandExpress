@@ -137,6 +137,11 @@ button:hover {
   font-size: 1.1rem;
   color: #222;
 }
+.note-meta {
+  font-size: 0.95rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
 .note-content {
   margin-bottom: 0.5rem;
   color: #444;

@@ -34,7 +34,19 @@ app.post('/api/notes', (req, res) => {
   const notes = readNotes();
   const { title, content } = req.body;
   if (!title || !content) return res.status(400).json({ error: 'Title and content required.' });
-  const newNote = { id: Date.now().toString(), title, content };
+  const now = new Date();
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dateString = now.toLocaleDateString();
+  const dayString = days[now.getDay()];
+  const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const newNote = {
+    id: Date.now().toString(),
+    title,
+    content,
+    date: dateString,
+    day: dayString,
+    time: timeString
+  };
   notes.push(newNote);
   writeNotes(notes);
   res.status(201).json(newNote);
@@ -49,6 +61,10 @@ app.put('/api/notes/:id', (req, res) => {
   if (!note) return res.status(404).json({ error: 'Note not found.' });
   note.title = title || note.title;
   note.content = content || note.content;
+  // Ensure date, day, and time are preserved
+  note.date = note.date || new Date().toLocaleDateString();
+  note.day = note.day || ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()];
+  note.time = note.time || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   writeNotes(notes);
   res.json(note);
 });

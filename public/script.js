@@ -12,9 +12,20 @@ function fetchNotes() {
       notes.forEach(note => {
         const li = document.createElement('li');
         li.className = 'note';
+        let meta = '';
+        if (note.day && note.date && note.time) {
+          meta = `${note.day}, ${note.date} | ${note.time}`;
+        } else if (note.day && note.date) {
+          meta = `${note.day}, ${note.date}`;
+        } else if (note.date) {
+          meta = `${note.date}`;
+        } else {
+          meta = '';
+        }
         li.innerHTML = `
           <div class="note-title">${note.title}</div>
           <div class="note-content">${note.content}</div>
+          <div class="note-meta">${meta}</div>
           <div class="note-actions">
             <button class="edit" onclick="editNote('${note.id}')">Edit</button>
             <button onclick="deleteNote('${note.id}')">Delete</button>
@@ -45,10 +56,12 @@ noteForm.onsubmit = function(e) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, content })
-    }).then(() => {
-      noteForm.reset();
-      fetchNotes();
-    });
+    })
+      .then(res => res.json())
+      .then(note => {
+        noteForm.reset();
+        fetchNotes();
+      });
   }
 };
 
