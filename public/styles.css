@@ -1,59 +1,89 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f4f4f4 100%);
   margin: 0;
   padding: 0;
 }
+.header {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border-bottom: 1px solid #e0e0e0;
+}
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
 .container {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 30px auto;
   background: #fff;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
-h1 {
-  text-align: center;
-}
+/* h1 is now in header */
 form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
   margin-bottom: 2rem;
 }
 input, textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 1px solid #b3b3b3;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+input:focus, textarea:focus {
+  border-color: #007bff;
+  outline: none;
 }
 button {
-  background: #007bff;
+  background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
   color: #fff;
   border: none;
-  padding: 0.7rem;
-  border-radius: 4px;
+  padding: 0.8rem;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  transition: background 0.2s;
 }
 button:hover {
-  background: #0056b3;
+  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
 }
 #notes-list {
   list-style: none;
   padding: 0;
 }
 .note {
-  background: #f9f9f9;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 4px;
+  background: #f6f8fa;
+  margin-bottom: 1.2rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: 8px;
   position: relative;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  border: 1px solid #e0e0e0;
 }
 .note-title {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #222;
 }
 .note-content {
   margin-bottom: 0.5rem;
+  color: #444;
 }
 .note-actions {
   position: absolute;
@@ -66,14 +96,17 @@ button:hover {
   background: #dc3545;
   color: #fff;
   border: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: background 0.2s;
 }
 .note-actions button.edit {
   background: #ffc107;
   color: #333;
 }
 .note-actions button:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
